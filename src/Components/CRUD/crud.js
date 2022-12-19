@@ -1,24 +1,17 @@
 import axios from "axios";
+let base_url = "https://fake-json-apis.onrender.com/api/todos";
 const getTodo = () => {
-  return axios.get("https://fake-json-server-api-sahnawaz.herokuapp.com/tasks");
+  return axios.get(base_url);
 };
 const postTodo = (data) => {
-  return axios.post(
-    "https://fake-json-server-api-sahnawaz.herokuapp.com/tasks",
-    data
-  );
+  return axios.post(base_url, data);
 };
 const deleteTodo = (id) => {
-  return axios.delete(
-    "https://fake-json-server-api-sahnawaz.herokuapp.com/tasks/" + id
-  );
+  return axios.delete(`${base_url}/${id}`);
 };
 const statusUpdate = (id, newStatus) => {
-  return axios.patch(
-    "https://fake-json-server-api-sahnawaz.herokuapp.com/tasks/" + id,
-    {
-      status: newStatus,
-    }
-  );
+  return axios.patch(`${base_url}/${id}`, {
+    status: newStatus,
+  });
 };
 export { getTodo, postTodo, deleteTodo, statusUpdate };

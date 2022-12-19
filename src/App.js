@@ -4,6 +4,7 @@ import Todo from "./Components/Todo";
 import { TodoContext } from "./Contexts/TodoContext";
 
 function App() {
+  document.title = "Basic Todo App";
   const todo = useContext(TodoContext);
   console.log(todo);
   return (
